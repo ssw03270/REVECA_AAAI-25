@@ -37,8 +37,15 @@ Examples of *--lm_id*:
 - [ ] Overcooked-AI setting.
 
 ### Citation
-If you use this code or parts of it in your work, please cite the following papers:
-- [REVECA: Adaptive Planning and Trajectory-based Validation in Cooperative Language Agents using Information Relevance and Relative Proximity](https://arxiv.org/abs/2405.16751)
+If you find this work useful in your research, please cite:
+> ```bibtex
+> @article{seo2024llm,,
+>   title={REVECA: Adaptive Planning and Trajectory-based Validation in Cooperative Language Agents using Information Relevance and Relative Proximity},
+>   author={SeungWon Seo and SeongRae Noh and Junhyeok Lee and SooBin Lim and Won Hee Lee and HyeongYeop Kang},
+>   journal={arXiv preprint arXiv:2405.16751v2},
+>   year={2024}
+> }
+> ```
 
 This code is derived from the code of the following paper:
 - [Building Cooperative Embodied Agents Modularly with Large Language Models](https://arxiv.org/abs/2307.02485) by Zhang et al.
