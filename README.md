@@ -1,6 +1,7 @@
 ## **REVECA**: Adaptive Planning and Trajectory-based Validation in Cooperative Language Agents using Information Relevance and Relative Proximity
 
 This repository contains the code for the following paper.
+[main.pdf](https://github.com/user-attachments/files/18194249/main.pdf)
 
 Paper Link: [arxiv](https://arxiv.org/abs/2405.16751)
 
