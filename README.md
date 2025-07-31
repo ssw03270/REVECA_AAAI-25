@@ -39,11 +39,14 @@ Examples of *--lm_id*:
 ### Citation
 If you find this work useful in your research, please cite:
 > ```bibtex
-> @article{seo2024llm,,
->   title={REVECA: Adaptive Planning and Trajectory-based Validation in Cooperative Language Agents using Information Relevance and Relative Proximity},
->   author={SeungWon Seo and SeongRae Noh and Junhyeok Lee and SooBin Lim and Won Hee Lee and HyeongYeop Kang},
->   journal={arXiv preprint arXiv:2405.16751v2},
->   year={2024}
+> @inproceedings{seo2025reveca,
+>   title={Reveca: Adaptive planning and trajectory-based validation in cooperative language agents using information relevance and relative proximity},
+>   author={Seo, SeungWon and Noh, SeongRae and Lee, Junhyeok and Lim, SooBin and Lee, Won Hee and Kang, HyeongYeop},
+>   booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
+>   volume={39},
+>   number={22},
+>   pages={23295--23303},
+>   year={2025}
 > }
 > ```
 
