@@ -5,6 +5,9 @@
 This repository contains the implementation for:
 - Paper: [REVECA (AAAI 2025)](https://arxiv.org/abs/2405.16751)
 
+> If you encounter any issues or bugs in the code, please feel free to open an issue in this repository.
+> If my response is delayed, it is likely that I may have overlooked the notification. In urgent cases, you are welcome to contact me directly at ssw03270@korea.ac.kr, and I will review and respond as soon as possible.
+
 ## Repository Structure
 
 This repository now includes two benchmark tracks:
