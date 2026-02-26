@@ -133,6 +133,11 @@ class LLM:
                     self.ollama_client = OllamaClient(host=host)
                 return self.ollama_client
 
+            def _get_ollama_openai():
+                base_url = os.environ.get("OLLAMA_OPENAI_BASE_URL", "http://localhost:11434/v1")
+                api_key = os.environ.get("OLLAMA_API_KEY", "ollama")
+                return _get_openai(base_url=base_url, api_key=api_key)
+
             def _is_ollama_model(model_id: str) -> bool:
                 return any(
                     model_id.lower().startswith(prefix) for prefix in ["gpt-oss", "gemma", "gemma3", "gemma2"]) \
@@ -159,7 +164,7 @@ class LLM:
                             generated_reasoning = getattr(resp.message, 'thinking', '') or resp.message.get(
                                 'thinking', '') if hasattr(resp, 'message') else ''
                         elif "gemma" in lm_id:
-                            ollama = _get_openai(base_url="http://163.152.163.21:11434/v1", api_key="ollama")
+                            ollama = _get_ollama_openai()
                             resp = ollama.chat.completions.create(model=lm_id, messages=prompt, **sampling_params)
                             generated_text = [resp.choices[i].message.content for i in range(sampling_params['n'])][
                                 0]
@@ -226,8 +231,8 @@ class LLM:
         #
         #     def _get_ollama():
         #         if self.ollama_client is None:
-        #             # http://163.152.163.21:11434/v1
-        #             host = os.environ.get("OLLAMA_HOST", "http://163.152.163.21:11434")
+        #             # Example: http://localhost:11434/v1
+        #             host = os.environ.get("OLLAMA_HOST", "http://localhost:11434")
         #             self.ollama_client = OllamaClient(host=host)
         #         return self.ollama_client
         #     # Configure the RouteLLM controller
@@ -238,13 +243,13 @@ class LLM:
         #     try:
         #         gemma3_remote = LLMConfig(
         #             provider_model="ollama/gpt-oss:20b",
-        #             api_base="http://163.152.163.21:11434",  # External server IP; omit /v1 here.
-        #             api_key="ollama"  # Ollama uses a dummy key.
+        #             api_base=os.environ.get("OLLAMA_OPENAI_BASE_URL", "http://localhost:11434/v1"),
+        #             api_key=os.environ.get("OLLAMA_API_KEY", "ollama")
         #         )
         #         self.client =  LLMClient({'gpt-oss': gemma3_remote})
         #         # self.client = openai.OpenAI(
-        #         #     base_url="http://163.152.163.21:11434/v1",
-        #         #     api_key="ollama"
+        #         #     base_url=os.environ.get("OLLAMA_OPENAI_BASE_URL", "http://localhost:11434/v1"),
+        #         #     api_key=os.environ.get("OLLAMA_API_KEY", "ollama")
         #         # )
         #
         #

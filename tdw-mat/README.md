@@ -34,6 +34,33 @@ pip install -r requirements.txt
 
 ---
 
+## Environment Variables
+
+Set environment variables before running experiments.
+
+- `OPENAI_API_KEY`: required when using OpenAI-hosted models (e.g., `gpt-4o-mini`).
+- `OLLAMA_HOST`: Ollama native endpoint (default: `http://localhost:11434`).
+- `OLLAMA_OPENAI_BASE_URL`: OpenAI-compatible Ollama endpoint (default: `http://localhost:11434/v1`).
+- `OLLAMA_API_KEY`: API key used for OpenAI-compatible Ollama endpoint (default: `ollama`).
+
+Examples:
+
+```bash
+export OPENAI_API_KEY=your_openai_api_key
+export OLLAMA_HOST=http://localhost:11434
+export OLLAMA_OPENAI_BASE_URL=http://localhost:11434/v1
+export OLLAMA_API_KEY=ollama
+```
+
+```powershell
+$env:OPENAI_API_KEY="your_openai_api_key"
+$env:OLLAMA_HOST="http://localhost:11434"
+$env:OLLAMA_OPENAI_BASE_URL="http://localhost:11434/v1"
+$env:OLLAMA_API_KEY="ollama"
+```
+
+---
+
 ## Run Experiments
 
 Example scripts are provided under `scripts/`.  
