@@ -1,54 +1,65 @@
-## **REVECA**: Adaptive Planning and Trajectory-based Validation in Cooperative Language Agents using Information Relevance and Relative Proximity
+# **REVECA**: Adaptive Planning and Trajectory-based Validation in Cooperative Language Agents using Information Relevance and Relative Proximity
 
 ![main](https://github.com/user-attachments/assets/bbfd0d91-c3bf-49f6-8541-71921151314e)
 
-This repository contains the code for the following paper.
-Paper Link: [arxiv](https://arxiv.org/abs/2405.16751)
+This repository contains the implementation for:
+- Paper: [REVECA (AAAI 2025)](https://arxiv.org/abs/2405.16751)
 
-### Setup Instructions
-1. Clone the [VirtualHome API](https://github.com/xavierpuigf/virtualhome) repository one folder above this repository.
-2. Download the [simulator](https://drive.google.com/file/d/1JTrV5jdF-LQVwY3OsV3Jd3r6PRghyHBp/view), and place it in an *executable* folder, located one folder above this repository.
-3. Create a conda environment and install the required dependencies:
+## Repository Structure
 
-```
-conda create --name reveca python=3.8
-conda activate reveca 
-pip install -r requirements.txt 
-```
+This repository now includes two benchmark tracks:
 
-### Running the Code
-To run the code, execute the following command:
-```
+- `cwah/`: C-WAH benchmark code (VirtualHome-based)
+- `tdw-mat/`: TDW Multi-Agent Transport benchmark code
+
+Benchmark-specific instructions:
+
+- C-WAH guide: [cwah/README.md](cwah/README.md)
+- TDW-MAT guide: [tdw-mat/README.md](tdw-mat/README.md)
+
+## Quick Start
+
+### C-WAH
+
+```bash
+cd cwah
+conda create -n reveca_cwah python=3.8
+conda activate reveca_cwah
+pip install -r requirements.txt
 sh ./scripts/symbolic_obs_llm_llm.sh
 ```
 
-### Changing the LLM Version
-If you want to change the version of the LLMs, navigate to the *scripts* folder and edit the *symbolic_obs_llm_llm.sh* file. 
+### TDW-MAT
 
-Modify the *--lm_id* parameter to specify the version of GPT you want to use.
+```bash
+cd tdw-mat
+conda create -n reveca_tdw python=3.9
+conda activate reveca_tdw
+pip install -r requirements.txt
+sh ./scripts/test_LMs-gpt-4o-mini.sh
+```
 
-Examples of *--lm_id*:
-- gpt-4o-mini-2024-07-18
-- gpt-3.5-turbo-0125
+## Release Status
 
-### TODO List
-- [x] C-WAH setting.
-- [ ] TDW-MAT setting.
-- [ ] Overcooked-AI setting.
+- [x] C-WAH setting
+- [x] TDW-MAT setting
+- [ ] Overcooked-AI setting
 
-### Citation
+## Citation
+
 If you find this work useful in your research, please cite:
-> ```bibtex
-> @inproceedings{seo2025reveca,
->   title={Reveca: Adaptive planning and trajectory-based validation in cooperative language agents using information relevance and relative proximity},
->   author={Seo, SeungWon and Noh, SeongRae and Lee, Junhyeok and Lim, SooBin and Lee, Won Hee and Kang, HyeongYeop},
->   booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
->   volume={39},
->   number={22},
->   pages={23295--23303},
->   year={2025}
-> }
-> ```
 
-This code is derived from the code of the following paper:
+```bibtex
+@inproceedings{seo2025reveca,
+  title={Reveca: Adaptive planning and trajectory-based validation in cooperative language agents using information relevance and relative proximity},
+  author={Seo, SeungWon and Noh, SeongRae and Lee, Junhyeok and Lim, SooBin and Lee, Won Hee and Kang, HyeongYeop},
+  booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
+  volume={39},
+  number={22},
+  pages={23295--23303},
+  year={2025}
+}
+```
+
+This code is derived from:
 - [Building Cooperative Embodied Agents Modularly with Large Language Models](https://arxiv.org/abs/2307.02485) by Zhang et al.
